@@ -5,14 +5,16 @@
  * Date: 05.04.13
  * Time: 20:36
  * To change this template use File | Settings | File Templates.
- */?>
+ */
+?>
 
 
 <!-- Content -->
 <div class="span9">
-    <div id="ibn">
-        <h2>IBN</h2>
-
+    <section id="ibn">
+        <div class="page-header">
+            <h2>IBN</h2>
+        </div>
         <div>
             <img src="../img/icons/ibn.jpg" alt="IBN Konstanz"/>
             <br><br>
@@ -28,12 +30,12 @@
                 ibn at ibn-online.de
             </p>
         </div>
-    </div>
-    <br><br>
+    </section>
 
-    <div id="htwg">
-        <h2>HTWG Konstanz</h2>
-
+    <section id="htwg-konstanz">
+        <div class="page-header">
+            <h2>HTWG Konstanz</h2>
+        </div>
         <div>
             <img src="../img/icons/htwg.png" alt="HTWG Konstanz"/>
             <br><br>
@@ -52,7 +54,7 @@
             <br>
             <br>
         </div>
-    </div>
+    </section>
 </div>
 <!-- Content -->
 

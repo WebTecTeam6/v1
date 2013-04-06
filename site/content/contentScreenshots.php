@@ -10,78 +10,80 @@
 
 <!-- Content -->
 <div class="span9">
-    <div>
-        <div id="ipad">
+
+    <section id="ipad">
+        <div class="page-header">
             <h2>SeaPal on the iPad</h2>
-
-            <div>
-                <figure>
-                    <img src="../img/screenshots//SeaPal-InitialPosition.jpg" alt="SeaPal-InitialPosition"
-                         width="580" height="435"/>
-                    <figcaption>Map view with current position, initial view.</figcaption>
-                </figure>
-                <br>
-                <figure>
-                    <img src="../img/screenshots//SeaPal-Gothenborg-Menu.jpg" alt="SeaPal-Gothenborg-Menu"
-                         width="580" height="435"/>
-                    <figcaption>Menu selected.</figcaption>
-                </figure>
-                <br>
-                <figure>
-                    <img src="../img/screenshots//SeaPal-Gothenborg-Tools.jpg" alt="SeaPal-Gothenborg-Tools"
-                         width="580" height="435">
-                    <figcaption>Tools selected.</figcaption>
-                </figure>
-                <br>
-                <figure>
-                    <img src="../img/screenshots//SeaPal-Gothenborg-OSM.jpg" alt="SeaPal-Gothenborg-OSM"
-                         width="580" height="435">
-                    <figcaption>Map view with OpenSeaMap showing Gothenburg.</figcaption>
-                </figure>
-                <br>
-                <figure>
-                    <img src="../img/screenshots//SeaPal-SatelliteView.jpg" alt="SeaPal-SatelliteView"
-                         width="580" height="435"/>
-                    <figcaption>Satellite view</figcaption>
-                </figure>
-                <br>
-                <figure>
-                    <img src="../img/screenshots//SeaPal-Satellite-Closeup.jpg"
-                         alt="SeaPal-Satellite-Closeup" width="580" height="435">
-                    <figcaption>Satellite view - Close-up.</figcaption>
-                </figure>
-                <br>
-                <figure>
-                    <img src="../img/screenshots//SeaPal-Southampton-OSM.jpg" alt="SeaPal-Southampton-OSM"
-                         width="580" height="435"/>
-                    <figcaption>Map view with OpenSeaMap showing Southampton.</figcaption>
-                </figure>
-                <br>
-                <figure>
-                    <img src="../img/screenshots//SeaPal-Konstanz-IBN.jpg" alt="SeaPal-Konstanz-IBN"
-                         width="580" height="435"/>
-                    <figcaption>Offline map from IBN</figcaption>
-                </figure>
-                <br>
-                <figure>
-                    <img src="../img/screenshots//SeaPal-POI-Search.jpg" alt="SeaPal-POI-Search" width="435"
-                         height="580">
-                    <figcaption>Searching for Points of Interest</figcaption>
-                </figure>
-                <br>
-                <figure>
-                    <img src="../img/screenshots//SeaPal-POI-Harborinfo.jpg" alt="SeaPal-POI-Harborinfo"
-                         width="435" height="580">
-                    <figcaption>Points of Interest: Info for a Harbour</figcaption>
-                </figure>
-            </div>
         </div>
-    </div>
-    <div id="tools">
-        <br><br>
 
-        <h2>SeaPal Tools</h2>
+        <div>
+            <figure>
+                <img src="../img/screenshots//SeaPal-InitialPosition.jpg" alt="SeaPal-InitialPosition"
+                     width="580" height="435"/>
+                <figcaption>Map view with current position, initial view.</figcaption>
+            </figure>
+            <br>
+            <figure>
+                <img src="../img/screenshots//SeaPal-Gothenborg-Menu.jpg" alt="SeaPal-Gothenborg-Menu"
+                     width="580" height="435"/>
+                <figcaption>Menu selected.</figcaption>
+            </figure>
+            <br>
+            <figure>
+                <img src="../img/screenshots//SeaPal-Gothenborg-Tools.jpg" alt="SeaPal-Gothenborg-Tools"
+                     width="580" height="435">
+                <figcaption>Tools selected.</figcaption>
+            </figure>
+            <br>
+            <figure>
+                <img src="../img/screenshots//SeaPal-Gothenborg-OSM.jpg" alt="SeaPal-Gothenborg-OSM"
+                     width="580" height="435">
+                <figcaption>Map view with OpenSeaMap showing Gothenburg.</figcaption>
+            </figure>
+            <br>
+            <figure>
+                <img src="../img/screenshots//SeaPal-SatelliteView.jpg" alt="SeaPal-SatelliteView"
+                     width="580" height="435"/>
+                <figcaption>Satellite view</figcaption>
+            </figure>
+            <br>
+            <figure>
+                <img src="../img/screenshots//SeaPal-Satellite-Closeup.jpg"
+                     alt="SeaPal-Satellite-Closeup" width="580" height="435">
+                <figcaption>Satellite view - Close-up.</figcaption>
+            </figure>
+            <br>
+            <figure>
+                <img src="../img/screenshots//SeaPal-Southampton-OSM.jpg" alt="SeaPal-Southampton-OSM"
+                     width="580" height="435"/>
+                <figcaption>Map view with OpenSeaMap showing Southampton.</figcaption>
+            </figure>
+            <br>
+            <figure>
+                <img src="../img/screenshots//SeaPal-Konstanz-IBN.jpg" alt="SeaPal-Konstanz-IBN"
+                     width="580" height="435"/>
+                <figcaption>Offline map from IBN</figcaption>
+            </figure>
+            <br>
+            <figure>
+                <img src="../img/screenshots//SeaPal-POI-Search.jpg" alt="SeaPal-POI-Search" width="435"
+                     height="580">
+                <figcaption>Searching for Points of Interest</figcaption>
+            </figure>
+            <br>
+            <figure>
+                <img src="../img/screenshots//SeaPal-POI-Harborinfo.jpg" alt="SeaPal-POI-Harborinfo"
+                     width="435" height="580">
+                <figcaption>Points of Interest: Info for a Harbour</figcaption>
+            </figure>
+        </div>
+    </section>
 
+    <section id="tools">
+
+        <div class="page-header">
+            <h2>SeaPal Tools</h2>
+        </div>
         <div>
             <figure>
                 <img src="../img/screenshots//SeaPal-RouteTool.jpg" alt="SeaPal-RouteTool" width="580"
@@ -101,12 +103,12 @@
                 <figcaption>The Distance Tool - Miami to Montego Bay is about 755 nm.</figcaption>
             </figure>
         </div>
-    </div>
-    <div id="inplace">
-        <br><br>
+    </section>
 
-        <h2>SeaPal In-Place-Tools</h2>
-
+    <section id="in-place-tools">
+        <div class="page-header">
+            <h2>SeaPal In-Place-Tools</h2>
+        </div>
         <div>
             <figure>
                 <img src="../img/screenshots//SeaPal-Longtouch.jpg" alt="SeaPal-Longtouch" width="580"
@@ -140,12 +142,12 @@
                 </figcaption>
             </figure>
         </div>
-    </div>
-    <div id="logbook">
-        <br><br>
+    </section>
 
-        <h2>SeaPal Logbook and Tracking</h2>
-
+    <section id="logbook">
+        <div class="page-header">
+            <h2>SeaPal Logbook and Tracking</h2>
+        </div>
         <div>
             <figure>
                 <img src="../img/screenshots//SeaPal-Tracking.jpg" alt="SeaPal-Tracking" width="580"
@@ -164,12 +166,12 @@
                 <figcaption>The Logbook view for a Trip.</figcaption>
             </figure>
         </div>
-    </div>
-    <div>
-        <br><br>
+    </section>
 
-        <h2>SeaPal on the iPhone</h2>
-
+    <section id="iphone">
+        <div class="page-header">
+            <h2>SeaPal on the iPhone</h2>
+        </div>
         <div>
             <figure>
                 <img src="../img/screenshots//SeaPal-iPhone-LaCoruna.jpg" alt="SeaPal-iPhone-LaCoruna"
@@ -196,6 +198,7 @@
             </figure>
             <br><br>
         </div>
-    </div>
+    </section>
+
 </div>
 <!-- Content -->
