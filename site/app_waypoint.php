@@ -12,8 +12,8 @@
 
     <link href="../bootstrap/css/bootstrap.css" rel="stylesheet">
     <link href="../bootstrap/css/bootstrap-responsive.css" rel="stylesheet">
+    <link href="../bootstrap/css/docs.css" rel="stylesheet">
     <link href="../bootstrap/css/footer.less" rel="stylesheet/less" type="text/css">
-    <link href="../bootstrap/css/contenApp.less" rel="stylesheet/less" type="text/css">
 
     <title>Seapal</title>
 
@@ -23,9 +23,11 @@
 
 <?php
 
-//require_once 'Sidebar.php';
-//renders Hrader.php
-include './header.php';
+require_once 'header.php';
+$header = new Header();
+
+//renders header
+echo $header->getHeader('app');
 
 ?>
 

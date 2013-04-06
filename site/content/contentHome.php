@@ -23,33 +23,33 @@
                 interaction.
             </p>
 
-            <p>
+            <p class="lead">
                 Online maps are available from Google and OpenSeaMap, allong with satellite view. With these a trip can
                 easily be planed and documented. In navigation the offline operation and the precision and depth of
                 detail is of special importance. Thats why digital sea maps for selected areas can be downloaded and
                 used offline.
             </p>
 
-            <p>
+            <p class="lead">
                 For the area of the Lake Constance excellent sea maps and local information (harbours, shipyards, shops,
                 restaurants) provided by the IBN publishing house are available as extensions. Further areas are in
                 preparation.
             </p>
 
-            <p>
+            <p class="lead">
                 The application was developed particularly for the iPad in a cooperation between the IBN publishing
                 house and the HTWG Constance University. The specific advantages of a mobile device and the touch
                 interface were taken into account just as well as the special requirements of sailors and skippers. As a
                 result of this cooperation, <b>SeaPal</b> is made available for free. Extensions and sea maps can be
                 purchased and loaded according to your area and needs.
-            </p>
+            </p class="lead">
 
-            <p>
+            <p class="lead">
                 This cooperation is open to further extension. Should you be interested to develop or provide further
                 extensions, please contact us.
             </p>
 
-            <p>
+            <p class="lead">
                 The application runs on the iPad and with reduced functionality on the iPhone. An iPad with 3G or 4G and
                 GPS is recommended. For longer use an external power source (like a USP port of a radio) is required.
             </p>

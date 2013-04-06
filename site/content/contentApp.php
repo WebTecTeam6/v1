@@ -9,11 +9,12 @@
 ?>
 
 <!-- Content -->
-<div>
+<div class="span11">
     <br/>
 
-    <h2>Wegpunkt</h2>
-    <br/>
+    <div class="page-header">
+        <h2>Wegpunkt</h2>
+    </div>
 
     <div>
         <form>
@@ -80,6 +81,7 @@
 </div>
 <br/>
 <br/>
+
 <div>
     <div>
         <div id="appNotes">
@@ -187,14 +189,10 @@
                         <br>
                         <label for="time">Time</label>
                         <input name="time" type="time" id="time"/>
-
-
                     </fieldset>
-
-
                 </form>
+
             </div>
         </div>
     </div>
 </div>
-</div><!-- Content -->
