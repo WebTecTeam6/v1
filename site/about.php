@@ -26,9 +26,11 @@
 //implements Class Sidebar
 require_once 'Sidebar.php';
 
-//renders Hrader.php
-include './header.php';
+require_once 'header.php';
+$header = new Header();
 
+//renders header
+echo $header->getHeader('about');
 $sideBar = new Sidebar();
 ?>
 
