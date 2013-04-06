@@ -8,16 +8,14 @@
  */
 ?>
 
-
 <!-- Content -->
-<div class="span12">
-    <!-- Content -->
-    <div class="page-header">
-        <h2>Wegpunkt</h2>
-    </div>
+<div>
     <br/>
 
-    <div class="span5">
+    <h2>Wegpunkt</h2>
+    <br/>
+
+    <div>
         <form>
             <div>
                 <div>
@@ -79,29 +77,124 @@
                 </div>
             </div>
     </div>
-
-
+</div>
 <br/>
 <br/>
-
 <div>
     <div>
         <div id="appNotes">
             <h4>Notes</h4>
             <textarea></textarea>
         </div>
-
-        <div id="markerMap" class="span6">
+        <div id="markerMap">
             <h4>Map</h4>
             <img src="../img/icons/marker_map.png" id="appInfoPhoto"/>
         </div>
-
         <div id="appPhotos">
             <h4>Photos</h4>
-            <img src="../img/icons/no_image.jpg" id="appInfoPhoto"/>
-        </div>
+            <!--<img src="../img/icons/no_image.jpg" id="appInfoPhoto" /> -->
+            <div id="weatherInfo">
+                <form method="get" action="">
+                    <fieldset>
+                        <legend>Weather Information</legend>
+                        <table border="1">
+                            <colgroup>
+                                <col width="320">
+                                <col width="320">
+                                <col width="320">
+                                <col width="320">
+                            </colgroup>
+                            <tr>
+                                <td>
+                                    <label for="windStrength">Wind Strength</label>
+                                </td>
+                                <td>
+                                    <input name="windStrength" type="text" id="windStrength"/>
+                                </td>
+                                <td>
+                                    <label for="windDirection">Wind Direction</label>
+                                </td>
+                                <td>
+                                    <select name="windDirection">
+                                        <option value="North"
+                                                selected="selected">North
+                                        </option>
+                                        <option value="NorthEast">NorthEast</option>
+                                        <option value="NorthWest">NorthWest</option>
+                                        <option value="NorthNorthWest">NorthNorthWest</option>
+                                        <option value="NorthNorthEast">NorthNorthEast</option>
+                                        <option value="East">East</option>
+                                        <option value="South">South</option>
+                                        <option value="SouthEast">SouthEast</option>
+                                        <option value="SouthSouthWest">SouthSouthWest</option>
+                                        <option value="SouthSouthEast">SouthSouthEast</option>
+                                        <option value="SouthWest">SouthWest</option>
+                                        <option value="West">West</option>
+                                    </select>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <label for="airPressure">Air Pressure</label>
+                                </td>
+                                <td>
+                                    <input name="airPressure" type="text" id="airPressure"/>
+                                </td>
+                                <td>
+                                    <label for="temperature">Temperature</label>
+                                </td>
+                                <td>
+                                    <input name="temperature" type="text" id="temperature"/>
+                                </td>
+                            </tr>
 
+                            <tr>
+                                <td>
+                                    <label for="clouds">Clouds</label>
+                                </td>
+                                <td>
+                                    <input name="clouds" type="text" id="clouds"/>
+                                </td>
+                                <td>
+                                    <label for="rain">Rain</label>
+                                </td>
+                                <td>
+                                    <input name="rain" type="text" id="rain"/>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>
+                                    <label for="waveHight">Wave Hight</label>
+                                </td>
+                                <td>
+                                    <input name="waveHight" type="text" id="waveHight"/>
+                                </td>
+                                <td>
+                                    <label for="waveDirection">Wave Direction</label>
+                                </td>
+                                <td>
+                                    <input name="waveDirection" type="text" id="waveDirection"/>
+                                </td>
+                            </tr>
+                        </table>
+                    </fieldset>
+
+                    <fieldset>
+                        <legend>Date & Time</legend>
+                        <label for="date">Date</label>
+                        <input name="date" type="date" id="date"/>
+                        <br>
+                        <label for="time">Time</label>
+                        <input name="time" type="time" id="time"/>
+
+
+                    </fieldset>
+
+
+                </form>
+            </div>
+        </div>
     </div>
 </div>
-
-</div>
+</div><!-- Content -->
