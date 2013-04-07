@@ -7,7 +7,7 @@
 <div class="span9">
     <!-- Content -->
 
-    <section id="welcome">
+    <section id="Welcome">
         <div class="page-header">
             <h2>Welcome to SeaPal</h2>
         </div>
@@ -57,7 +57,7 @@
     </section>
     <br><br>
 
-    <section id="overview">
+    <section id="Overview">
         <div class="page-header">
             <h2>Function Overview</h2>
         </div>
@@ -90,7 +90,7 @@
         </div>
     </section>
 
-    <section id="extension">
+    <section id="Extension">
         <div class="page-header"><h1>Extensions</h1></div>
 
         <p class="lead">
@@ -106,7 +106,7 @@
     </section>
     <br><br>
 
-    <section id="warning">
+    <section id="Warning">
         <div class="page-header">
             <h1>Warning</h1>
         </div>

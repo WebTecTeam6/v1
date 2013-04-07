@@ -11,7 +11,7 @@
 
 <!-- Content -->
 <div class="span9">
-    <section id="ibn">
+    <section id="IBN">
         <div class="page-header">
             <h2>IBN</h2>
         </div>
@@ -32,7 +32,7 @@
         </div>
     </section>
 
-    <section id="htwg-konstanz">
+    <section id="Htwg-Konstanz">
         <div class="page-header">
             <h2>HTWG Konstanz</h2>
         </div>
