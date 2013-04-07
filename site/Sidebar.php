@@ -13,11 +13,12 @@ class Sidebar
     function __construct()
     {
         $this->_sideBar = array(
-            'index' => array('#welcome', '#overview', '#extension', '#warning'),
-            'about' => array('userguide.php', 'contact.php'),
-            'contact' => array('#ibn', '#htwg-konstanz'),
-            'screenshots' => array('#ipad', '#tools', '#in-place-tools', '#iphone'),
-            'userguide' => array('#installingseapal', '#startingseapal', '#mapselection')
+            'index' => array('#Welcome', '#Overview', '#Extension', '#Warning'),
+            'app' => array('#Wegpunkt', '#Weather-Information'),
+            'about' => array('Userguide.php', 'Contact.php'),
+            'contact' => array('#IBN', '#Htwg-Konstanz'),
+            'screenshots' => array('#Ipad', '#Tools', '#In-Place-Tools','#Logbook', '#Iphone'),
+            'userguide' => array('#installing-Seapal', '#Starting-Seapal', '#Mapselection')
         );
     }
 
@@ -38,6 +39,9 @@ class Sidebar
             } elseif (substr($value, -4) == '.php') {
                 $value = substr($value, 0, -4);
             }
+
+            //delete - for display
+            $value = str_replace('-', ' ', $value);
 
             $sidebar .=$value . '</a></li>';
 

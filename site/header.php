@@ -5,11 +5,11 @@ class Header
     public $_headerStatic = '';
     public $_headerStaticClose = '';
     public $_activeIndex =  '<li><a href="index.php">Home</a></li>';
-    public $_activeApp =    '<li><a href="app_waypoint.php">App</a></li>';
-    public $_activeGuide =  '<li><a href="userguide.php">User Guide</a></li>';
-    public $_activeScreen = '<li><a href="screenshots.php">Screenshots</a></li>';
-    public $_activeAbout =  '<li><a href="about.php">About</a></li>';
-    public $_activeContact = '<li><a href="contact.php">Contact</a></li>';
+    public $_activeApp = '<li><a href="App_waypoint.php">App</a></li>';
+    public $_activeGuide = '<li><a href="Userguide.php">User Guide</a></li>';
+    public $_activeScreen = '<li><a href="Screenshots.php">Screenshots</a></li>';
+    public $_activeAbout = '<li><a href="About.php">About</a></li>';
+    public $_activeContact = '<li><a href="Contact.php">Contact</a></li>';
     public $_fullHeader = '';
 
     function __construct()
@@ -38,23 +38,23 @@ class Header
                 break;
 
             case 'app':
-                $this->_activeApp =     '<li class="active"><a href="app_waypoint.php">App</a></li>';
+                $this->_activeApp = '<li class="active"><a href="App_waypoint.php">App</a></li>';
                 break;
 
             case'userguide':
-                $this->_activeGuide =   '<li class="active"><a href="userguide.php">User Guide</a></li>';
+                $this->_activeGuide = '<li class="active"><a href="Userguide.php">User Guide</a></li>';
                 break;
 
             case 'screenshots':
-                $this->_activeScreen =  '<li class="active"><a href="screenshots.php">Screenshots</a></li>';
+                $this->_activeScreen = '<li class="active"><a href="Screenshots.php">Screenshots</a></li>';
                 break;
 
             case 'about':
-                $this->_activeAbout =   '<li class="active"><a href="about.php">About</a></li>';
+                $this->_activeAbout = '<li class="active"><a href="About.php">About</a></li>';
                 break;
 
             case 'contact':
-                $this->_activeContact = '<li class="active"><a href="contact.php">Contact</a></li>';
+                $this->_activeContact = '<li class="active"><a href="Contact.php">Contact</a></li>';
                 break;
         }
 

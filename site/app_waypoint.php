@@ -25,7 +25,9 @@
 <?php
 
 require_once 'header.php';
+require_once 'Sidebar.php';
 $header = new Header();
+$sidebar = new Sidebar();
 
 //renders header
 echo $header->getHeader('app');
@@ -37,6 +39,7 @@ echo $header->getHeader('app');
     <div class="row">
 
         <?php
+        echo $sidebar->getSidebarForSite('app');
         include 'content/contentApp.php';
         ?>
     </div>

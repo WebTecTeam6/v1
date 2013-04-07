@@ -7,7 +7,7 @@
 <!-- Content -->
 <div class="span9" xmlns="http://www.w3.org/1999/html">
     <div>
-        <section id="installingseapal">
+        <section id="Installing-Seapal">
             <div class="page-header">
                 <h2>Installing SeaPal</h2>
             </div>
@@ -24,7 +24,7 @@
     </section>
     <br><br>
 
-    <section id="startingseapal">
+    <section id="Starting-Seapal">
         <div class="page-header">
             <h2>Starting SeaPal</h2></div>
 
@@ -56,7 +56,7 @@
     </section>
     <div>
         <br><br>
-        <section id="mapselection">
+        <section id="Mapselection">
             <div class="page-header">
                 <h2>Map Selection</h2>
             </div>

@@ -11,7 +11,7 @@
 <!-- Content -->
 <div class="span9">
 
-    <section id="ipad">
+    <section id="Ipad">
         <div class="page-header">
             <h2>SeaPal on the iPad</h2>
         </div>
@@ -79,7 +79,7 @@
         </div>
     </section>
 
-    <section id="tools">
+    <section id="Tools">
 
         <div class="page-header">
             <h2>SeaPal Tools</h2>
@@ -105,7 +105,7 @@
         </div>
     </section>
 
-    <section id="in-place-tools">
+    <section id="In-Place-Tools">
         <div class="page-header">
             <h2>SeaPal In-Place-Tools</h2>
         </div>
@@ -144,7 +144,7 @@
         </div>
     </section>
 
-    <section id="logbook">
+    <section id="Logbook">
         <div class="page-header">
             <h2>SeaPal Logbook and Tracking</h2>
         </div>
@@ -168,7 +168,7 @@
         </div>
     </section>
 
-    <section id="iphone">
+    <section id="Iphone">
         <div class="page-header">
             <h2>SeaPal on the iPhone</h2>
         </div>
