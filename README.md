@@ -12,3 +12,5 @@ Branch RC -> Release Candidate, erst hierhin pushen bevor auf den Master, Ist so
 5. Pullrequest on origin master in github
 6. somebody merges changes into master 
 7. done ;)
+
+PITA
