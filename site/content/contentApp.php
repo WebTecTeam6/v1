@@ -95,7 +95,7 @@
             <!--            <h4>Photos</h4>-->
             <!--<img src="../img/icons/no_image.jpg" id="appInfoPhoto" /> -->
             <div id="weatherInfo" class="span11">
-                <form method="get" action="">
+                <form method="POST" action="">
                     <fieldset id="fieldsetWeatherInfo">
                         <legend>Weather Information</legend>
 
@@ -145,10 +145,12 @@
                             <input name="waveDirection" type="text" id="waveDirection"/>
 
                         </div>
-
-
+                        <div>
+                            <input type="button" name="Submit" value="Submit"
+                            onclick=>
+                        </div>
                     </fieldset>
-
+                            
                 </form>
 
                 <div class="span3">
