@@ -41,6 +41,7 @@ echo $header->getHeader('SignIn');
         <?php
         echo $sidebar->getSidebarForSite('SignIn');
         include 'content/contentSignIn.php';
+        include 'insert.php';
         ?>
     </div>
 </div>
