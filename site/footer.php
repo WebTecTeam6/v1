@@ -68,6 +68,17 @@
             </div>
         </div>
         </p>
+    </div>
+
+    <div class="counter">
+        Anzahl Besucher auf Seapal:
+        <?php
+            include("hit_counter.php");
+        ?>
+    </div>
+
+    <div class="database">
+        DB-Wurst:
 
     </div>
 

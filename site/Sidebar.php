@@ -18,7 +18,8 @@ class Sidebar
             'about' => array('Userguide.php', 'Contact.php'),
             'contact' => array('#IBN', '#Htwg-Konstanz'),
             'screenshots' => array('#Ipad', '#Tools', '#In-Place-Tools','#Logbook', '#Iphone'),
-            'userguide' => array('#installing-Seapal', '#Starting-Seapal', '#Mapselection')
+            'userguide' => array('#installing-Seapal', '#Starting-Seapal', '#Mapselection'),
+            'SignIn' => array('#SignIn')
         );
     }
 

@@ -10,6 +10,7 @@ class Header
     public $_activeScreen = '<li><a href="Screenshots.php">Screenshots</a></li>';
     public $_activeAbout = '<li><a href="About.php">About</a></li>';
     public $_activeContact = '<li><a href="Contact.php">Contact</a></li>';
+    public $_activeSignIn = '<li><a href="SignIn.php">Sign In</a></li>';
     public $_fullHeader = '';
 
     function __construct()
@@ -56,6 +57,9 @@ class Header
             case 'contact':
                 $this->_activeContact = '<li class="active"><a href="Contact.php">Contact</a></li>';
                 break;
+
+            case 'SignIn':
+            $this->_activeSignIn = '<li class="active"><a href="SignIn.php">Sign In</a></li>';
         }
 
         $this->buildHeader();
@@ -72,9 +76,9 @@ class Header
                 . $this->_activeScreen
                 . $this->_activeAbout
                 . $this->_activeContact
+                . $this->_activeSignIn
                 . $this->_headerStaticClose;
     }
 }
-
 
 ?>
