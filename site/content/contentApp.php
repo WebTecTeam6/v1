@@ -1,12 +1,19 @@
-<?php
-/**
- * Created by JetBrains PhpStorm.
- * User: evanglion
- * Date: 05.04.13
- * Time: 19:08
- * To change this template use File | Settings | File Templates.
- */
-?>
+
+<!-- bring in the OpenLayers javascript library
+    (here we bring it from the remote site, but you could
+    easily serve up this javascript yourself) -->
+<script src="http://www.openlayers.org/api/OpenLayers.js"></script>
+
+<!-- bring in the OpenStreetMap OpenLayers layers.
+    Using this hosted file will make sure we are kept up
+    to date with any necessary changes -->
+<script src="http://www.openstreetmap.org/openlayers/OpenStreetMap.js"></script>
+<script type="text/javascript" src="http://map.openseamap.org/map/javascript/harbours.js"></script>
+<script type="text/javascript" src="http://map.openseamap.org/map/javascript/map_utils.js"></script>
+<script type="text/javascript" src="http://map.openseamap.org/map/javascript/utilities.js"></script>
+<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB25Pukgbs3v9GQwqi3ZqSVIhd4HTbU2Nc&sensor=false"></script>
+
+<script type="text/javascript" src="../bootstrap/js/weatherMap.js" rel="script"></script>
 
 <!-- Content -->
 <div class="span9">
@@ -14,11 +21,15 @@
         <div class="page-header">
             <h2>Wegpunkt</h2>
         </div>
-
-        <div class="span3">
+        <h4>Map</h4>
+        <div id="seaMap" class="span9">
+            <!-- define a DIV into which the map will appear. Make it take up the whole window -->
+            <div style="width:100%; height:100%" id="mapCanvas"></div>
+        </div>
+        <div class="span10">
             <form>
 
-                <div>
+                <div class="span3">
 
                     <div>
                         <label>Name</label>
@@ -33,9 +44,13 @@
                         <label>Date</label>
                         <input type="date" id="wtime"/>
                     </div>
+                    <div>
+                        <label>BTM</label>
+                        <input type="text" id="btm"/>
+                    </div>
                 </div>
 
-                <div>
+                <div class="span3">
                     <div>
                         <label>Latitude</label>
                         <input type="text" id="lat"/>
@@ -48,9 +63,13 @@
                         <label>Fahrt nach</label>
                         <select name="fahrtziel" id="marker"></select>
                     </div>
+                    <div>
+                        <label>DTM</label>
+                        <input type="text" id="dtm"/>
+                    </div>
                 </div>
 
-                <div>
+                <div class="span3">
                     <div>
                         <label>COG</label>
                         <input type="text" id="cog"/>
@@ -64,28 +83,11 @@
                         <label>Manoever</label>
                         <select name="manoever" id="manoever"></select>
                     </div>
-                </div>
-
-                <div>
-                    <div>
-                        <label>BTM</label>
-                        <input type="text" id="btm"/>
-                    </div>
-                    <div>
-                        <label>DTM</label>
-                        <input type="text" id="dtm"/>
-                    </div>
                     <div>
                         <label>Vorsegel</label>
                         <select name="vorsegel" id="vorsegel"></select>
                     </div>
                 </div>
-
-        </div>
-
-        <div id="markerMap" class="span5">
-            <h4>Map</h4>
-            <img src="../img/icons/marker_map.png" id="appInfoPhoto"/>
         </div>
 
     </section>
@@ -170,3 +172,6 @@
         </div>
     </section>
 </div>
+
+
+

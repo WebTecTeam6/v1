@@ -89,8 +89,4 @@
 
 </footer>
 
-<script src="../bootstrap/js/jquery.js" rel="script"></script>
-<script src="../bootstrap/js/bootstrap-affix.js" rel="script"></script>
-<script src="../bootstrap/js/bootstrap-collapse.js" rel="script"></script>
-<script src="../bootstrap/js/bootstrap-scrollspy.js" rel="script"></script>
-<script src="../bootstrap/js/less.js" rel="script"></script>
+

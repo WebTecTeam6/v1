@@ -10,11 +10,6 @@
     <meta name='description' content='SeaPal is a mobile app for sailors to do navigation, tracking and more.'/>
     <meta name="author" content="Prof. Dr. Marko Boger, Dominic Eschbach und Timo Partl">
 
-    <link href="../bootstrap/css/bootstrap.css" rel="stylesheet">
-    <link href="../bootstrap/css/bootstrap-responsive.css" rel="stylesheet">
-    <link href="../bootstrap/css/docs.css" rel="stylesheet">
-    <link href="../bootstrap/css/footer.less" rel="stylesheet/less" type="text/css">
-
     <title>Seapal</title>
 
 </head>
@@ -27,7 +22,7 @@
 require_once 'Sidebar.php';
 require_once 'header.php';
 $header = new Header();
-
+include('scripts.php');
 //renders header
 echo $header->getHeader('index');
 
