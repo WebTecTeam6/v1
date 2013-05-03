@@ -13,7 +13,7 @@ if (!$con){
 }
 
 mysql_select_db("webTec", $con);
-
+echo "blub";
 $sql="INSERT INTO Persons (FirstName, LastName, Age) VALUES('$firstName', '$lastName', '$age')";
 
 if (!mysql_query($sql,$con))

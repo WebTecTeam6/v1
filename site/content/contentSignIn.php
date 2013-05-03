@@ -50,16 +50,12 @@
         <div>
             <p>
             <form action="SignIn.php" method="post">
-                Firstname: <input value="<?php
-
-                echo $GLOBALS["db_erg_firstName"];
-                if (isset($GLOBALS["db_erg_firstName"])){
-                        echo $GLOBALS["db_erg_firstName"];
-                        echo "Arschloch in";
-                    }
-                    ?>" id="firstName" type="text" name="firstname" />
-                    Lastname: <input id="lastName" type="text" name="lastname" />
-                    Age: <input id="age" type="text" name="age" />
+                Firstname: <input value="<?php echo $db_erg_firstName ; ?>"
+                    id="firstName" type="text" name="firstname" />
+                Lastname: <input value="<?php echo $db_erg_lastName ; ?>"
+                    id="lastName" type="text" name="lastname" />
+                Age: <input value="<?php echo $db_erg_age ; ?>"
+                    id="age" type="text" name="age" />
                 <input type="submit" />
             </form></p>
             <br>

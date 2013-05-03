@@ -11,17 +11,12 @@ $firstName = $_POST['firstname'];
 $lastName = $_POST['lastname'];
 $age = $_POST['age'];
 mysql_select_db("webtec");
-$sql_firstName = "SELECT FirstName FROM Persons";
-$sql_lastName = "SELECT LastName FROM Persons";
-$sql_age = "SELECT age FROM Persons";
+//$sql_firstName = "SELECT FirstName FROM Persons";
+//$sql_lastName = "SELECT LastName FROM Persons";
+//$sql_age = "SELECT age FROM Persons";
 
 //mysql_fetch_array() <-- durchlesen
-$db_erg_firstName = mysql_query( $sql_firstName);
-$db_erg_lastName = mysql_query( $sql_lastName);
-$db_erg_age = mysql_query( $sql_age);
-if ( (! $db_erg_firstName) || (! $db_erg_lastName) || (! $db_erg_age) ){
-    die('Ungültige Abfrage: ' . mysql_error());
-}
+
 
 //echo $_POST['firstname'];
 //echo $_POST['lastname'];
@@ -30,11 +25,31 @@ if ( (! $db_erg_firstName) || (! $db_erg_lastName) || (! $db_erg_age) ){
 mysql_select_db("webTec", $con);
 
 $sql="INSERT INTO Persons (FirstName, LastName, Age) VALUES('$firstName', '$lastName', '$age')";
+if (!mysql_query($sql,$con))
+{
+    die('Error: ' . mysql_error());
+};
 
-  if (!mysql_query($sql,$con))
-  {
-      die('Error: ' . mysql_error());
-  };
+//$sql_firstName = "SELECT FirstName FROM Persons WHERE FirstName = '$firstName' AND  LastName= '$lastName' AND Age = '$age' ";
+$sql_select_result = "SELECT * FROM Persons WHERE FirstName = '$firstName' AND  LastName= '$lastName' AND Age = '$age'";
+//$sql_age = "SELECT  Age FROM Persons WHERE FirstName = $firstName AND  LastName= $lastName AND Age =$age ";
+//$sql_age = "SELECT  Age FROM Persons WHERE FirstName = $firstName AND  LastName= $lastName AND Age =$age ";
+
+$resultSet = mysql_query( $sql_select_result);
+$arrayFetch = mysql_fetch_array($resultSet);
+$db_erg_firstName = $arrayFetch['FirstName'];
+$db_erg_lastName = $arrayFetch['LastName'];
+$db_erg_age = $arrayFetch['Age'];
+
+//$db_erg_firstName = mysql_free_result( $sql_firstName);
+echo $db_erg_firstName;
+echo $db_erg_lastName;
+echo $db_erg_age;
+
+if ( (! $db_erg_firstName) || (! $db_erg_lastName) || (! $db_erg_age) ){
+    die('Ungültige Abfrage: ' . mysql_error());
+}
+
 
 $testselect = "SELECT * FROM Persons WHERE FirstName = 'aaa'";
 
