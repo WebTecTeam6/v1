@@ -18,8 +18,6 @@
 
     <title>Seapal</title>
 
-    <script type="text/javascript" language="JavaScript" src="SignInValidator.js"></script>
-
 </head>
 
 <body data-spy="scroll" data-target=".bs-docs-sidebar" data-twttr-rendered="true">
@@ -33,10 +31,6 @@ $sidebar = new Sidebar();
 
 //renders header
 echo $header->getHeader('SignIn');
-$db_erg_firstName = "Test";
-//$db_erg_lastName = "aha";
-//$db_erg_age = "6";
-//$db_erg_firstName = "Test";
 ?>
 
 <!--needs for sidebar and content-->
@@ -44,8 +38,8 @@ $db_erg_firstName = "Test";
     <div class="row">
 
         <?php
+        include("SignInValidator.php");
         IF(!isset($_POST['firstname']) AND !isset($_POST['lastname']) AND !isset($_POST['age'])){
-            echo "dem arschloch";
             $db_erg_firstName = "";
             $db_erg_lastName = "";
             $db_erg_age = "";
@@ -53,54 +47,65 @@ $db_erg_firstName = "Test";
             include 'content/contentSignIn.php';
         } else {
 
-            echo "wir sind hier";
 
             $post_firstName = (string)$_POST['firstname'];
             $post_lastName = $_POST['lastname'];
             $post_age = $_POST['age'];
 
-            /*echo '<script type="text/javascript" language="JavaScript">var blub= "<?php echo $post_firstName; ?>;" ;</script>';
-            echo '<script type="text/javascript" language="JavaScript">validateFirstdname(blub);</script>';
-            /*echo '<script type="text/javascript" language="JavaScript"> var blub= <? echo $post_firstName; ?>fuction validateFirstname(blub)</script>';*/
+    //        IF($validatorFirstname = validateName($post_firstName)=true){
+     //          IF($validatorLastname = validateName($post_lastName=true){
+      //             If($validatorAge = validateAge($post_age)=true){
 
-         echo '<script type="text/javascript" language="JavaScript"> a = 1; b = 2; c = a+b; alert(c); validateFirstname("lecken sie mich gepflegt die welt am arsch") </script>';
+            IF(validateName($post_firstName)==true
+                and validateName($post_lastName)==true
+                and validateAge($post_age)==true){
+                //         IF($validatorLastname = validateName($post_lastName)=true){
+                //             If($validatorAge = validateAge($post_age)=true){
 
+           echo $sidebar->getSidebarForSite('SignIn');
 
+// Connection zur DB-Server öffnen und DB auswählen
+            $con = mysql_connect("localhost","root","gras17");
+            mysql_select_db("webtec");
 
-            echo $sidebar->getSidebarForSite('SignIn');
-            include 'content/contentSignIn.php';
+// Werte aus Input-Feldern in DB schreiben
+            $firstName = $_POST['firstname'];
+            $lastName = $_POST['lastname'];
+            $age = $_POST['age'];
+            $sql="INSERT INTO Persons (FirstName, LastName, Age) VALUES('$firstName', '$lastName', '$age')";
+// Input-Query ausführen
+            if (!mysql_query($sql,$con))
+            {
+                die('Error: ' . mysql_error());
+            };
 
-            /*IF(is_string($_POST['firstname']) AND is_string($_POST['lastname']) AND is_int($_POST['age'])){
-                echo "dem is nix arschloch";
+// Output-Query ohne WHERE zusammenstellen
+            $sql_firstName = "SELECT FirstName FROM Persons WHERE FirstName = '$firstName'AND  LastName = '$lastName'AND Age ='$age'";
+            $sql_lastName = "SELECT LastName FROM Persons WHERE LastName = '$lastName'AND Age ='$age'AND FirstName = '$firstName'";
+            $sql_age = "SELECT age FROM Persons WHERE Age ='$age'AND LastName = '$lastName'AND FirstName = '$firstName'";
 
-                echo $sidebar->getSidebarForSite('SignIn');
-                include 'content/contentSignIn.php';
+// Output-Queries ausführen
+            $db_erg_firstName = mysql_query( $sql_firstName);
+            $db_erg_lastName = mysql_query( $sql_lastName);
+            $db_erg_age = mysql_query( $sql_age);
+
+            if ( (! $db_erg_firstName) || (! $db_erg_lastName) || (! $db_erg_age) ){
+                die('Ungültige Abfrage: ' . mysql_error());
             } else {
-                echo "Bitte alle Felder ausfüllen!";
-                echo $sidebar->getSidebarForSite('SignIn');
-                include 'insert.php';
-                include 'content/contentSignIn.php';
-            }*/
-            echo $sidebar->getSidebarForSite('SignIn');
+                $row = mysql_fetch_array($db_erg_firstName, MYSQL_NUM);
+                $db_erg_firstName = $row[0];
+                $row = mysql_fetch_array($db_erg_lastName, MYSQL_NUM);
+                $db_erg_lastName = $row[0];
+                $row = mysql_fetch_array($db_erg_age, MYSQL_NUM);
+                $db_erg_age = $row[0];
+            }
+
+
+        } else { echo"Fehlermeldung, Validator hat angeschlagen"; }
+            include 'content/contentSignIn.php';
         }
 
-
-        // IF durch isset ersetzt
-        /*If ($_POST['firstname']== "" AND $_POST['lastname']=="" AND $_POST['age']==""){
-            $db_erg_firstName = "";
-            $db_erg_lastName = "";
-            $db_erg_age = "";
-        echo "hallo Nadine, hier muss ne prüfung hin :p";
-        echo $sidebar->getSidebarForSite('SignIn');
-        include 'content/contentSignIn.php';
-        }
-        else{
-        echo $sidebar->getSidebarForSite('SignIn');
-        include 'insert.php';
-        include 'content/contentSignIn.php';}
-        */
-
-
+        //}
         ?>
     </div>
 </div>
