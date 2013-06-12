@@ -8,6 +8,10 @@
  */
 ?>
 
+<script type="text/javascript" language="JavaScript" src="v1/bootstrap/js/FormValidation.js"></script>
+
+
+
 <!-- Content -->
 <div class="span9">
     <section id="Wegpunkt">
@@ -95,7 +99,7 @@
             <!--            <h4>Photos</h4>-->
             <!--<img src="../img/icons/no_image.jpg" id="appInfoPhoto" /> -->
             <div id="weatherInfo" class="span11">
-                <form method="get" action="">
+                <form method="post" action="weatherInfoValidation.php">
                     <fieldset id="fieldsetWeatherInfo">
                         <legend>Weather Information</legend>
 
@@ -143,6 +147,8 @@
 
                             <label for="waveDirection">Wave Direction</label>
                             <input name="waveDirection" type="text" id="waveDirection"/>
+
+                            <button name="ich der button" type="button" onclick="validateOnSubmit();";>
 
                         </div>
 
