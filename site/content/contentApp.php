@@ -8,7 +8,7 @@
  */
 ?>
 
-<script type="text/javascript" language="JavaScript" src="v1/bootstrap/js/FormValidation.js"></script>
+<script type="text/javascript" language="JavaScript" src="../bootstrap/js/FormValidation.js"></script>
 
 
 
