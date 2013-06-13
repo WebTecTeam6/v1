@@ -1,7 +1,23 @@
-function initialize() {
+function toggleFullScreen(check) {
+    options = {
+        position: 'fixed',
+        width: '100%',
+        height: '100%',
+        left: '-31px',
+        top: '41px'
+    }
 
-    //----------------------------------------------------------Overlays
-    //mainmap
+
+    if (check == true) {
+        $('#seaMap').css(options);
+    } else {
+        $('#seaMap').removeAttr('style');
+    }
+}
+
+function initialize() {
+//----------------------------------------------------------Overlays
+//mainmap
     var mainMap = new google.maps.ImageMapType({
         getTileUrl: function (coord, zoom) {
             return "http://tiles.openseamap.org/seamark/" + zoom + "/" + coord.x + "/" +
@@ -11,7 +27,7 @@ function initialize() {
         name: "OpenSeaMap",
         maxZoom: 18 });
 
-    //windmap
+//windmap
     var tempMap = new google.maps.ImageMapType({
         getTileUrl: function (coord, zoom) {
             return "http://www.openportguide.org/tiles/actual/air_temperature/5/" + zoom +
@@ -22,7 +38,7 @@ function initialize() {
         maxZoom: 18
     });
 
-    //tempMap
+//tempMap
     var windMap = new google.maps.ImageMapType({
         getTileUrl: function (coord, zoom) {
             return "http://www.openportguide.org/tiles/actual/wind_vector/5/" + zoom + "/" +
@@ -32,7 +48,7 @@ function initialize() {
         name: "Windmap",
         maxZoom: 18
     });
-    //----------------------------------------------------------
+//----------------------------------------------------------
 
     var mapOptions = {
         center: new google.maps.LatLng(47.66, 9.16),
@@ -46,13 +62,13 @@ function initialize() {
     map.overlayMapTypes.push(null);	// Placeholder for OSM TOP + Sites
     map.overlayMapTypes.push(null);
 
-    //-------------------------------------------------------setMapOverlays
+//-------------------------------------------------------setMapOverlays
     map.overlayMapTypes.setAt(0, mainMap);
     map.overlayMapTypes.setAt(1, windMap);
     map.overlayMapTypes.setAt(2, tempMap);
 
 
-    //create the check box items
+//create the check box items
     var checkOptions1 = {
         gmap: map,
         title: "Aktivieren und deaktivieren der Windkennung",
@@ -60,7 +76,7 @@ function initialize() {
         label: "Wind On/Off",
         checked: false,
         action: function () {
-            if(this.checked == true) {
+            if (this.checked == true) {
                 this.checked = false;
                 map.overlayMapTypes.setAt(1, windMap);
             } else {
@@ -78,7 +94,7 @@ function initialize() {
         label: "temp On/Off",
         checked: false,
         action: function () {
-            if(this.checked == true) {
+            if (this.checked == true) {
                 this.checked = false;
                 map.overlayMapTypes.setAt(2, tempMap);
             } else {
@@ -89,25 +105,45 @@ function initialize() {
     }
     var check2 = new checkBox(checkOptions2);
 
-    //put them all together to create the drop down
+    var checkOptions3 = {
+        gmap: map,
+        title: "FullScreen On/Off",
+        id: "toggleFullScreen",
+        label: "fullscreen",
+        checked: false,
+        action: function () {
+            if (this.checked == false) {
+                toggleFullScreen(true);
+                this.checked = true;
+                initialize();
+            } else {
+                this.checked = false;
+                toggleFullScreen(false);
+            }
+
+        }
+    }
+    var check3 = new checkBox(checkOptions3);
+
+//put them all together to create the drop down
     var ddDivOptions = {
-        items: [check1, check2],
+        items: [check1, check2, check3],
         id: "myddOptsDiv"
     }
-    //alert(ddDivOptions.items[1]);
+//alert(ddDivOptions.items[1]);
     var dropDownDiv = new dropDownOptionsDiv(ddDivOptions);
 
     var dropDownOptions = {
         gmap: map,
-        name: 'toggle Overlays',
+        name: 'Options',
         id: 'ddControl',
         position: google.maps.ControlPosition.TOP_RIGHT,
         dropDown: dropDownDiv
     }
 
     var dropDown1 = new dropDownControl(dropDownOptions);
+    map.event.addDomListener(window, 'load', initialize);
 
-    google.maps.event.addDomListener(window, 'load', initialize);
 
     function checkBox(options) {
         //first make the outer container

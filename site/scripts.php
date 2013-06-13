@@ -3,6 +3,7 @@
 <link href="../bootstrap/css/docs.css" rel="stylesheet">
 <link href="../bootstrap/css/footer.less" rel="stylesheet/less" type="text/css">
 <link href="../bootstrap/css/content.less" rel="stylesheet/less" type="text/css">
+<link href="../bootstrap/css/custom_map_options.css" rel="stylesheet/less" type="text/css">
 <script src="../bootstrap/js/jquery.js" rel="script"></script>
 <script src="../bootstrap/js/bootstrap-affix.js" rel="script"></script>
 <script src="../bootstrap/js/bootstrap-collapse.js" rel="script"></script>
