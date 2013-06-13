@@ -1,3 +1,38 @@
+//mainmap
+var mainMap = new google.maps.ImageMapType({
+    getTileUrl: function (coord, zoom) {
+        return "http://tiles.openseamap.org/seamark/" + zoom + "/" + coord.x + "/" +
+            coord.y + ".png";
+    },
+    tileSize: new google.maps.Size(256, 256),
+    name: "OpenSeaMap",
+    maxZoom: 18 });
+
+//windmap
+var tempMap = new google.maps.ImageMapType({
+    getTileUrl: function (coord, zoom) {
+        return "http://www.openportguide.org/tiles/actual/air_temperature/5/" + zoom +
+            "/" + coord.x + "/" + coord.y + ".png";
+    },
+    tileSize: new google.maps.Size(256, 256),
+    name: "TempMap",
+    maxZoom: 18
+});
+
+//tempMap
+var windMap = new google.maps.ImageMapType({
+    getTileUrl: function (coord, zoom) {
+        return "http://www.openportguide.org/tiles/actual/wind_vector/5/" + zoom + "/" +
+            coord.x + "/" + coord.y + ".png";
+    },
+    tileSize: new google.maps.Size(256, 256),
+    name: "Windmap",
+    maxZoom: 18
+});
+//----------------------------------------------------------
+
+var toggleFullscreen = false;
+
 function toggleFullScreen(check) {
     options = {
         position: 'fixed',
@@ -6,7 +41,6 @@ function toggleFullScreen(check) {
         left: '-31px',
         top: '41px'
     }
-
 
     if (check == true) {
         $('#seaMap').css(options);
@@ -17,46 +51,15 @@ function toggleFullScreen(check) {
 
 function initialize() {
 //----------------------------------------------------------Overlays
-//mainmap
-    var mainMap = new google.maps.ImageMapType({
-        getTileUrl: function (coord, zoom) {
-            return "http://tiles.openseamap.org/seamark/" + zoom + "/" + coord.x + "/" +
-                coord.y + ".png";
-        },
-        tileSize: new google.maps.Size(256, 256),
-        name: "OpenSeaMap",
-        maxZoom: 18 });
 
-//windmap
-    var tempMap = new google.maps.ImageMapType({
-        getTileUrl: function (coord, zoom) {
-            return "http://www.openportguide.org/tiles/actual/air_temperature/5/" + zoom +
-                "/" + coord.x + "/" + coord.y + ".png";
-        },
-        tileSize: new google.maps.Size(256, 256),
-        name: "TempMap",
-        maxZoom: 18
-    });
 
-//tempMap
-    var windMap = new google.maps.ImageMapType({
-        getTileUrl: function (coord, zoom) {
-            return "http://www.openportguide.org/tiles/actual/wind_vector/5/" + zoom + "/" +
-                coord.x + "/" + coord.y + ".png";
-        },
-        tileSize: new google.maps.Size(256, 256),
-        name: "Windmap",
-        maxZoom: 18
-    });
-//----------------------------------------------------------
-
-    var mapOptions = {
+    mapOptions = {
         center: new google.maps.LatLng(47.66, 9.16),
         zoom: 14,
         mapTypeId: google.maps.MapTypeId.ROADMAP
     };
 
-    var map = new google.maps.Map(document.getElementById("mapCanvas"), mapOptions);
+    map = new google.maps.Map(document.getElementById("mapCanvas"), mapOptions);
 
     map.overlayMapTypes.push(null);	// Placeholder for Sites Overlay
     map.overlayMapTypes.push(null);	// Placeholder for OSM TOP + Sites
@@ -66,7 +69,8 @@ function initialize() {
     map.overlayMapTypes.setAt(0, mainMap);
     map.overlayMapTypes.setAt(1, windMap);
     map.overlayMapTypes.setAt(2, tempMap);
-
+}
+function setAttributes(){
 
 //create the check box items
     var checkOptions1 = {
@@ -110,17 +114,18 @@ function initialize() {
         title: "FullScreen On/Off",
         id: "toggleFullScreen",
         label: "fullscreen",
-        checked: false,
         action: function () {
-            if (this.checked == false) {
+            if (toggleFullscreen == false) {
                 toggleFullScreen(true);
-                this.checked = true;
+                toggleFullscreen = true;
                 initialize();
+                setAttributes();
             } else {
-                this.checked = false;
+                toggleFullscreen = false;
                 toggleFullScreen(false);
+                initialize();
+                setAttributes();
             }
-
         }
     }
     var check3 = new checkBox(checkOptions3);
@@ -142,8 +147,6 @@ function initialize() {
     }
 
     var dropDown1 = new dropDownControl(dropDownOptions);
-    map.event.addDomListener(window, 'load', initialize);
-
 
     function checkBox(options) {
         //first make the outer container
@@ -216,10 +219,10 @@ function initialize() {
             }, 1500);
         })
     }
-
 }
 
 $(document).ready(function () {
-        initialize()
+        initialize();
+        setAttributes();
     }
 );
