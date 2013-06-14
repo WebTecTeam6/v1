@@ -99,7 +99,7 @@
             <!--            <h4>Photos</h4>-->
             <!--<img src="../img/icons/no_image.jpg" id="appInfoPhoto" /> -->
             <div id="weatherInfo" class="span11">
-                <form method="post" action="weatherInfoValidation.php">
+                <form method="get" action="">
                     <fieldset id="fieldsetWeatherInfo">
                         <legend>Weather Information</legend>
 

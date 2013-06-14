@@ -1,8 +1,7 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-    <script type="text/javascript" language="JavaScript" src="content/FormValidation.js">function test(){alert("arschoch webtec boger");
-            validateOnSubmit();}</script>
+
 
     <!-- Meta Informations -->
     <meta charset="utf-8">

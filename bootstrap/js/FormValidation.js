@@ -2,11 +2,8 @@
 
 function validateOnSubmit() {
 
-    alert("Hello World!");
-
     var meg = new Array();
     var count = 0;
-
     clearMessage('windStrength');
     clearMessage('airPressure');
     clearMessage('clouds');
@@ -15,16 +12,27 @@ function validateOnSubmit() {
     clearMessage('rain');
     clearMessage('waveDirection');
 
+    function clearMessage(infofield) {
+        msg(infofield, "", "");
+    }
+
+    function msg(fld, msgtype, message) {
+        var elem = document.getElementById(fld);
+
+        elem.className = msgtype;
+        document.getElementById(fld).innerHTML = message;
+        var test = elem.value;
+    }
 
 
-    if (!validateWindStrength(document.forms.weatherInfo.windStrength, 'windStrength')) {
+    if (!validateWindStrength(document.getElementById('windStrength'), 'windStrength')) {
         return false;
     }
     else {
         meg[count++] = "Correct windStrength.";
     }
 
-    if (!validateAirPressure(document.forms.weatherInfo.airPressure, 'airPressure')) {
+    if (!validateAirPressure(document.getElementById('airPressure'), 'airPressure')) {
         return false;
     }
     else {
@@ -74,139 +82,132 @@ function validateOnSubmit() {
                 alert(messages);
                 return true;
             }
-
-// ---------------- ClearMessage -------------------
-            function clearMessage(infofield) {
-                msg(infofield, "", "");
-            }
-
+        }
+    }
 
 //Wind Strength Validation
-            function validateWindStrength(valfield, infofield) {
-                var regExp = /^[0-9]+\.([0-9])$/;
+    function validateWindStrength(valfield, infofield) {
+        var regExp = /^[0-9]+\.([0-9])$/;
+        if (valfield.value == "") {
+            msg(infofield, "error", "ERROR: empty field.");
+            return false;
+        }
+        else if (regExp.test(valfield.value) == false) {
 
-                if (valfield.value == "") {
-                    msg(infofield, "error", "ERROR: empty field.");
-                    return false;
-                }
-                else if (regExp.test(valfield.value) == false) {
-
-                    msg(infofield, "error", "ERROR: non-number character(s) found.");
-                    return false;
-                }
-                else {
-                    return true;
-                }
-            }
+            msg(infofield, "error", "ERROR: non-number character(s) found.");
+            return false;
+        }
+        else {
+            return true;
+        }
+    }
 
 //Air Pressure Validation
-            function validateAirPressure(valfield, infofield) {
-                var regExp = /^[0-9]+\.([0-9])$/;
+     function validateAirPressure(valfield, infofield) {
+        var regExp = /^[0-9]+\.([0-9])$/;
 
-                if (valfield.value == "") {
-                    msg(infofield, "error", "ERROR: empty field.");
-                    return false;
-                }
-                else if (regExp.test(valfield.value) == false) {
-                    msg(infofield, "error", "ERROR: non-number character(s) found.");
-                    return false;
-                }
-                else {
-                    return true;
-                }
-            }
+        if (valfield.value == "") {
+            msg(infofield, "error", "ERROR: empty field.");
+            return false;
+        }
+        else if (regExp.test(valfield.value) == false) {
+            msg(infofield, "error", "ERROR: non-number character(s) found.");
+            return false;
+        }
+        else {
+            return true;
+        }
+     }
 
 //Cloud Validation
-            function validateClouds(valfield, infofield) {
-                var regExp = /^([A-Za-z])$/;
+     function validateClouds(valfield, infofield) {
+        var regExp = /^([A-Za-z])$/;
 
-                if (valfield.value == "") {
-                    msg(infofield, "error", "ERROR: empty field.");
-                    return false;
-                }
-                else if (regExp.test(valfield.value) == false) {
+        if (valfield.value == "") {
+            msg(infofield, "error", "ERROR: empty field.");
+            return false;
+        }
+        else if (regExp.test(valfield.value) == false) {
 
-                    msg(infofield, "error", "ERROR: non alphabetical character(s) found.");
-                    return false;
-                }
-                else {
-                    return true;
-                }
-            }
+            msg(infofield, "error", "ERROR: non alphabetical character(s) found.");
+            return false;
+        }
+        else {
+            return true;
+        }
+     }
 
 
 
 //Wave Hight Validation
-            function validateWaveHight(valfield, infofield) {
-                var regExp = /^[0-9]+\.([0-9])$/;
+     function validateWaveHight(valfield, infofield) {
+        var regExp = /^[0-9]+\.([0-9])$/;
 
-                if (valfield.value == "") {
-                    msg(infofield, "error", "ERROR: empty field.");
-                    return false;
-                } else if (regExp.test(valfield.value) == false) {
-                    msg(infofield, "error", "ERROR: non-number character(s) found.");
-                    return false;
-                } else {
-                    return true;
-                }
-            }
+        if (valfield.value == "") {
+            msg(infofield, "error", "ERROR: empty field.");
+            return false;
+        } else if (regExp.test(valfield.value) == false) {
+            msg(infofield, "error", "ERROR: non-number character(s) found.");
+            return false;
+        } else {
+            return true;
+        }
+     }
 
 //Temperature Validation
-            function validateTemperature(valfield, infofield) {
-                var regExp = /^[0-9]+\.([0-9])$/;
+     function validateTemperature(valfield, infofield) {
+        var regExp = /^[0-9]+\.([0-9])$/;
 
-                if (valfield.value == "") {
-                    msg(infofield, "error", "ERROR: empty field.");
-                    return false;
-                } else if (regExp.test(valfield.value) == false) {
-                    msg(infofield, "error", "ERROR: non-number character(s) found.");
-                    return false;
-                } else {
-                    return true;
-                }
-            }
+         if (valfield.value == "") {
+            msg(infofield, "error", "ERROR: empty field.");
+            return false;
+         } else if (regExp.test(valfield.value) == false) {
+             msg(infofield, "error", "ERROR: non-number character(s) found.");
+             return false;
+         } else {
+             return true;
+         }
+    }
 
 //Rain Validation
-            function validateRain(valfield, infofield) {
-                var regExp = / ---------- $/;
+     function validateRain(valfield, infofield) {
+       var regExp = / ---------- $/;
 
-                if (valfield.value == "") {
-                    msg(infofield, "error", "ERROR: empty field.");
-                    return false;
-                } else if (regExp.test(valfield.value) == false) {
-                    msg(infofield, "error", "Error Message.");
-                    return false;
-                } else {
-                    return true;
-                }
-            }
+       if (valfield.value == "") {
+           msg(infofield, "error", "ERROR: empty field.");
+           return false;
+       } else if (regExp.test(valfield.value) == false) {
+           msg(infofield, "error", "Error Message.");
+           return false;
+       } else {
+           return true;
+       }
+     }
 
 //Wave Direction Validation
-            function validateWaveDirection(valfield, infofield) {
-                var regExp = /^[a-zA-Z]$/;
+    function validateWaveDirection(valfield, infofield) {
+        var regExp = /^[a-zA-Z]$/;
 
-                if (valfield.value == "") {
-                    msg(infofield, "error", "ERROR: empty field.");
-                    return false;
-                } else if (regExp.test(valfield.value) == false) {
-                    msg(infofield, "error",
-                        "ERROR: non-letter character(s) found.");
-                    return false;
-                } else {
-                    return true;
-                }
-            }
-
-
-
-            function msg(fld, msgtype, message)
-            {
-                var elem = document.getElementById(fld);
-
-                elem.className = msgtype;
-                document.getElementById(fld).innerHTML = message;
-            }
-
+        if (valfield.value == "") {
+            msg(infofield, "error", "ERROR: empty field.");
+            return false;
+        } else if (regExp.test(valfield.value) == false) {
+            msg(infofield, "error",
+            "ERROR: non-letter character(s) found.");
+            return false;
+        } else {
+            return true;
         }
     }
+
+
+
+    function msg(fld, msgtype, message) {
+        var elem = document.getElementById(fld);
+
+        elem.className = msgtype;
+        document.getElementById(fld).innerHTML = message;
+    }
+
 }
+
