@@ -22,7 +22,7 @@
             <h2>Wegpunkt</h2>
         </div>
         <h4>Map</h4>
-        <div id="seaMap" class="span9" style="height: 400px; width: 870px;">
+        <div id="seaMap" class="span9">
              </div>
             <!-- define a DIV into which the map will appear. Make it take up the whole window -->
             <div style="width:100%; height:100%" id="mapCanvas"></div>
