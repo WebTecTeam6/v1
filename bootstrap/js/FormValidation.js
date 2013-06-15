@@ -24,7 +24,7 @@ function validateOnSubmit() {
         var test = elem.value;
     }
 
-
+// function zum zusammenfassen der !validate aufrufen muss noch übergeordnet werden bevor die erste if geprüft wird
     if (!validateWindStrength(document.getElementById('windStrength'), 'windStrength')) {
         return false;
     }
@@ -39,34 +39,58 @@ function validateOnSubmit() {
         meg[count++] = "Correct airPressure.";
     }
 
-
-    if (!validateClouds(document.forms.weatherInfo.clouds, 'clouds')) {
+    if (!validateClouds(document.getElementById('clouds'), 'clouds')) {
         return false;
     }
     else {
         meg[count++] = "Correct clouds.";
     }
 
-    if (!validateWaveHight(document.forms.weatherInfo.waveHight, 'waveHight')) {
+    if (!validateWaveHight(document.getElementById('waveHight'), 'waveHight')) {
         return false;
     }
     else {
         meg[count++] = "Correct waveHight.";
     }
 
-    if (!validateTemperature(document.forms.weatherInfo.temperature, 'temperature')) {
+    if (!validateTemperature(document.getElementById('temperature'), 'temperature')) {
+        return false;
+    }
+    else {
+        meg[count++] = "Correct temperature.";
+    }
+
+    if (!validateRain(document.getElementById('rain'), 'rain')) {
+        return false;
+    }
+    else {
+        meg[count++] = "Correct rain.";
+    }
+
+    if (!validateWaveDirection(document.getElementById('waveDirection'), 'waveDirection')) {
+        return false;
+    }
+    else {
+        meg[count++] = "Correct waveDirection.";
+    }
+
+    // Funktion mit for-Schleife für Ausgabe der messages muss noch hier folgen
+
+    // function zum zusammenfassen der !validate aufrufen muss hier geschlossen werden
+
+/*    if (!validateTemperature(document.getElementById('temperature'), 'temperature')) {
         return false;
     }
     else {
         meg[count++] = "Correct temperature.";
 
-        if (!validateRain(document.forms.weatherInfo.rain, 'rain')) {
+        if (!validateRain(document.getElementById('rain'), 'rain')) {
             return false;
         }
         else {
             meg[count++] = "Correct rain.";
 
-            if (!validateWaveDirection(document.forms.weatherInfo.waveDirection, 'waveDirection')) {
+            if (!validateWaveDirection(document.getElementById('waveDirection'), 'waveDirection')) {
                 return false;
             }
             else {
@@ -83,7 +107,7 @@ function validateOnSubmit() {
                 return true;
             }
         }
-    }
+    }*/
 
 //Wind Strength Validation
     function validateWindStrength(valfield, infofield) {
