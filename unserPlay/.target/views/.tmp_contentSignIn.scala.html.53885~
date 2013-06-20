@@ -1,0 +1,40 @@
+@(firstname: String)(lastname: String)(age: String)
+<!-- Einbindung der JS-Validierung -->
+<script src="@routes.Assets.at("javascripts/signInValidation.js")" type="text/javascript"></script>
+<!-- Content -->
+
+
+
+
+<div class="span9">
+    <!-- <section id="SignIn"> -->
+        <div class="page-header">
+            <h2>Sign In</h2>
+        </div>
+
+        <div>
+            <p>
+            <form name="signIn" method="post" action="signin.html" onsubmit="return validateSignIn();">
+                <div div="signInData" class="span3">
+					<label for="firstname">Firstname</label>
+                	<input name="firstname" type="text" id="firstname" value= "@firstname" />
+					
+					<label for="lastname">Lastname</label>
+                	<input name="lastname" type="text" id="lastname" value="@lastname" />
+					
+					<label for="age">Age</label>
+                	<input name="age" type="text" id="age" value="@age" />
+                </div>
+				<div class="clearfix"></div>
+				<input type="submit" value="abschicken"/>
+            </form></p>
+            <br>
+            <br>
+             <img src="@routes.Assets.at("icons/ibn.jpg")" alt="SeaPal-InitialPosition"/>
+            <figcaption>IBN Publishing House</figcaption>
+            <br>
+            <img src="@routes.Assets.at("icons/htwg.png")" alt="SeaPal-InitialPosition"/>
+            <figcaption>HTWG Constance University</figcaption>
+            <br>
+            <br>
+        </div>

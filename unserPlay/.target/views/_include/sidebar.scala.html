@@ -1,0 +1,39 @@
+@(file: String)
+
+<div class="span3 bs-docs-sidebar">
+    <ul class="nav nav-list bs-docs-sidenav affix">
+        @if(file == "index") {
+            <li><a href="#Welcome"><i class="icon-chevron-right"></i>Welcome</a></li>
+            <li><a href="#Overview"><i class="icon-chevron-right"></i>Overview</a></li>
+            <li><a href="#Extension"><i class="icon-chevron-right"></i>Extension</a></li>
+            <li><a href="#Warning"><i class="icon-chevron-right"></i>Warning</a></li>
+        }
+        @if(file == "app_map") {
+            <li><a href="#Wegpunkt"><i class="icon-chevron-right"></i>Wegpunkt</a></li>
+            <li><a href="#Weather-Information"><i class="icon-chevron-right"></i>Weather Information</a></li>
+        }
+        @if(file == "userguide") {
+            <li><a href="#Installing-Seapal"><i class="icon-chevron-right"></i>installing Seapal</a></li>
+            <li><a href="#Starting-Seapal"><i class="icon-chevron-right"></i>Starting Seapal</a></li>
+            <li><a href="#Mapselection"><i class="icon-chevron-right"></i>Mapselection</a></li>
+        }
+        @if(file == "screenshots") {
+            <li><a href="#Ipad"><i class="icon-chevron-right"></i>Ipad</a></li>
+            <li><a href="#Tools"><i class="icon-chevron-right"></i>Tools</a></li>
+            <li><a href="#In-Place-Tools"><i class="icon-chevron-right"></i>n Place Tools</a></li>
+            <li><a href="#Logbook"><i class="icon-chevron-right"></i>Logbook</a></li>
+            <li><a href="#Iphone"><i class="icon-chevron-right"></i>Iphone</a></li>
+        }
+        @if(file == "about") {
+            <li><a href="userguide.html  "><i class="icon-chevron-right"></i>Userguide</a></li>
+            <li><a href="contact.html"><i class="icon-chevron-right"></i>Contact</a></li>
+        }
+        @if(file == "contact") {
+            <li><a href="#IBN"><i class="icon-chevron-right"></i>IBN</a></li>
+            <li><a href="#Htwg-Konstanz"><i class="icon-chevron-right"></i>Htwg Konstanz</a></li>
+        }
+        @if(file == "signin") {
+            <li class="active"><a href="#SignIn"><i class="icon-chevron-right"></i>SignIn</a></li>
+        }
+    </ul>
+</div>

@@ -1,0 +1,17 @@
+# Routes
+# This file defines all application routes (Higher priority routes first)
+# ~~~~
+
+# Home page
+GET     /                           controllers.Index.index()
+GET     /index.html                 controllers.Index.index()
+GET     /contact.html               controllers.Contact.index()
+GET     /about.html                 controllers.About.index()
+GET     /userguide.html             controllers.Userguide.index()
+GET     /screenshots.html           controllers.Screenshots.index()
+GET     /app_map.html               controllers.App.index()
+GET     /signin.html                controllers.SignIn.index()
+POST	/signin.html				controllers.SignIn.signInValidation()
+
+# Map static resources from the /public folder to the /assets URL path
+GET     /assets/*file               controllers.Assets.at(path="/public", file)

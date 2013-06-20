@@ -1,0 +1,19 @@
+@(content: Html)(header: Html)(navigation: Html)(footer: Html)(sidebar: Html)
+
+<!DOCTYPE html>
+
+<html>
+    <head>
+        @header
+    </head>
+    <body data-spy="scroll" data-target=".bs-docs-sidebar" data-twttr-rendered="true">
+    @navigation
+    <div class="container" id="container-content">
+        <div class="row">
+            @sidebar
+            @content
+        </div>
+    </div>
+    @footer
+    </body>
+</html>

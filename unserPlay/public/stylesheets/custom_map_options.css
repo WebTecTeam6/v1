@@ -1,0 +1,148 @@
+.custom-container{
+    width: 120px;
+    margin: 5px;
+    cursor: pointer;
+    text-align: left;
+}
+.dropDownControl{
+    direction: ltr;
+    text-align: left;
+    position: relative;
+    font-family: Arial, sans-serif;
+    font-size: 13px;
+    border: 1px solid rgb(113, 123, 135);
+    color: rgb(0, 0, 0);
+    padding: 1px 6px;
+    font-weight: bold;
+    background-color: rgb(255, 255, 255);
+
+}
+
+.dropDownArrow{
+    -webkit-user-select: none;
+    border-width: 0px;
+    padding: 0px;
+    position: absolute;
+    right: 6px;
+    top: 50%;
+    margin: -2px 0px 0px;
+    width: 7px;
+    height: 4px;
+}
+
+.dropDownOptionsDiv{
+    background-color: white;
+    padding-top: 2px;
+    border-width: 1px;
+    border-top-width: 0px;
+    border-right: solid rgb(113, 123, 135);
+    border-bottom: solid rgb(113, 123, 135);
+    border-left: solid rgb(113, 123, 135);
+
+    -webkit-box-shadow: rgba(0, 0, 0, 0.398438) 0px 2px 4px;
+    box-shadow: rgba(0, 0, 0, 0.398438) 0px 2px 4px;
+    position: relative;
+    text-align: left;
+    display: none;
+}
+
+.dropDownItemDiv{
+    font-family: Arial, sans-serif;
+    -webkit-user-select: none;
+    font-size: 13px;
+    padding: 2px 5px 3px;
+    background-color: rgb(255, 255, 255);
+    color: black;
+    /*font-weight: bold;*/
+}
+.dropDownItemDiv:hover, .checkboxContainer:hover{
+    background-color: rgb(235, 235, 235);
+}
+.dropDownControl:hover, .button:hover{
+    background: -webkit-linear-gradient(top,rgb(255,255,255),rgb(230,230,230));
+}
+.separatorDiv{
+    margin: 1px 0px;
+    border-top: 1px solid rgb(235, 235, 235);
+}
+.checkboxContainer{
+    font-family: Arial, sans-serif;
+    -webkit-user-select: none;
+    font-size: 11px;
+    direction: ltr;
+    text-align: left;
+    background-color: rgb(255, 255, 255);
+    white-space: nowrap;
+    padding: 1px 8px 3px 5px;
+    color: rgb(0, 0, 0);
+}
+.checkboxSpan{
+    box-sizing: border-box;
+    position: relative;
+    line-height: 0;
+    font-size: 0px;
+    margin: 0px 5px 0px 0px;
+    display: inline-block;
+    background-color: rgb(255, 255, 255);
+    border-radius: 1px;
+    width: 13px;
+    height: 13px;
+    vertical-align: middle;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    border: 1px solid rgb(198, 198, 198);
+}
+
+
+.blankDiv{
+    position: absolute;
+    left: 1px;
+    top: -2px;
+    width: 13px;
+    height: 11px;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    display: none; /*when = block -> this is the "check" symbol*/
+}
+
+.blankImg{
+    position: absolute;
+    left: -52px;
+    top: -44px;
+    -webkit-user-select: none;
+    border-width: 0px;
+
+    padding: 0px;
+    margin: 0px;
+    -webkit-user-drag: none;
+    width: 68px;
+    height: 67px;
+}
+
+.checkboxLabel{
+    vertical-align: middle;
+    cursor: pointer;
+}
+.button{
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    text-align: center;
+    position: relative;
+    font-family: Arial, sans-serif;
+    font-size: 13px;
+    font-weight:bold;
+    box-shadow: rgba(0, 0, 0, 0.4) 0 2px 4px;
+    -moz-box-shadow: rgba(0, 0, 0, 0.4) 0 2px 4px;
+    -webkit-box-shadow: rgba(0, 0, 0, 0.4) 0 2px 4px;
+    color: #000;
+    border: 1px solid #717B87;
+    background-color: #fff;
+    margin: 5px;
+    padding: 1px 6px;
+    overflow: hidden;
+}
+
+.button-selected {
+    font-weight: bold;
+}
