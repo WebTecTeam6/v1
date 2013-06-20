@@ -25,7 +25,6 @@ $sidebar = new Sidebar();
 include('scripts.php');
 //renders header
 echo $header->getHeader('SignIn');
-
 ?>
 
 <!--needs for sidebar and content-->
@@ -33,9 +32,74 @@ echo $header->getHeader('SignIn');
     <div class="row">
 
         <?php
-        echo $sidebar->getSidebarForSite('SignIn');
-        include 'content/contentSignIn.php';
-        include 'insert.php';
+        include("SignInValidator.php");
+        IF(!isset($_POST['firstname']) AND !isset($_POST['lastname']) AND !isset($_POST['age'])){
+            $db_erg_firstName = "";
+            $db_erg_lastName = "";
+            $db_erg_age = "";
+            echo $sidebar->getSidebarForSite('SignIn');
+            include 'content/contentSignIn.php';
+        } else {
+
+
+            $post_firstName = (string)$_POST['firstname'];
+            $post_lastName = $_POST['lastname'];
+            $post_age = $_POST['age'];
+
+    //        IF($validatorFirstname = validateName($post_firstName)=true){
+     //          IF($validatorLastname = validateName($post_lastName=true){
+      //             If($validatorAge = validateAge($post_age)=true){
+
+            IF(validateName($post_firstName)==true
+                and validateName($post_lastName)==true
+                and validateAge($post_age)==true){
+                //         IF($validatorLastname = validateName($post_lastName)=true){
+                //             If($validatorAge = validateAge($post_age)=true){
+
+           echo $sidebar->getSidebarForSite('SignIn');
+
+// Connection zur DB-Server öffnen und DB auswählen
+            $con = mysql_connect("localhost","root","gras17");
+            mysql_select_db("webtec");
+
+// Werte aus Input-Feldern in DB schreiben
+            $firstName = $_POST['firstname'];
+            $lastName = $_POST['lastname'];
+            $age = $_POST['age'];
+            $sql="INSERT INTO Persons (FirstName, LastName, Age) VALUES('$firstName', '$lastName', '$age')";
+// Input-Query ausführen
+            if (!mysql_query($sql,$con))
+            {
+                die('Error: ' . mysql_error());
+            };
+
+// Output-Query ohne WHERE zusammenstellen
+            $sql_firstName = "SELECT FirstName FROM Persons WHERE FirstName = '$firstName'AND  LastName = '$lastName'AND Age ='$age'";
+            $sql_lastName = "SELECT LastName FROM Persons WHERE LastName = '$lastName'AND Age ='$age'AND FirstName = '$firstName'";
+            $sql_age = "SELECT age FROM Persons WHERE Age ='$age'AND LastName = '$lastName'AND FirstName = '$firstName'";
+
+// Output-Queries ausführen
+            $db_erg_firstName = mysql_query( $sql_firstName);
+            $db_erg_lastName = mysql_query( $sql_lastName);
+            $db_erg_age = mysql_query( $sql_age);
+
+            if ( (! $db_erg_firstName) || (! $db_erg_lastName) || (! $db_erg_age) ){
+                die('Ungültige Abfrage: ' . mysql_error());
+            } else {
+                $row = mysql_fetch_array($db_erg_firstName, MYSQL_NUM);
+                $db_erg_firstName = $row[0];
+                $row = mysql_fetch_array($db_erg_lastName, MYSQL_NUM);
+                $db_erg_lastName = $row[0];
+                $row = mysql_fetch_array($db_erg_age, MYSQL_NUM);
+                $db_erg_age = $row[0];
+            }
+
+
+        } else { echo"Fehlermeldung, Validator hat angeschlagen"; }
+            include 'content/contentSignIn.php';
+        }
+
+        //}
         ?>
     </div>
 </div>

@@ -15,6 +15,10 @@
 
 <script type="text/javascript" src="../bootstrap/js/weatherMap.js" rel="script"></script>
 
+<script type="text/javascript" language="JavaScript" src="../bootstrap/js/FormValidation.js"></script>
+
+
+
 <!-- Content -->
 <div class="span9">
     <section id="Wegpunkt">
@@ -146,6 +150,8 @@
 
                             <label for="waveDirection">Wave Direction</label>
                             <input name="waveDirection" type="text" id="waveDirection"/>
+
+                            <button name="ich der button" type="button" onclick="validateOnSubmit();";>
 
                         </div>
 
