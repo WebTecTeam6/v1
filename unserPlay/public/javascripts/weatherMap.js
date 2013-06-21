@@ -114,8 +114,10 @@ function initialize() {
     map = new google.maps.Map(document.getElementById('mapCanvas'),
         mapOptions);
 
-
-
+    var weatherLayer = new google.maps.weather.WeatherLayer({
+        temperatureUnits: google.maps.weather.TemperatureUnit.FAHRENHEIT
+    });
+    weatherLayer.setMap(map);
 
     map.overlayMapTypes.push(null);	// Placeholder for Sites Overlay
     map.overlayMapTypes.push(null);	// Placeholder for OSM TOP + Sites
@@ -133,16 +135,18 @@ function initialize() {
     }));
 
 //-------------------------------------------------------setMapOverlays
-    map.overlayMapTypes.setAt(0, mainMap);
-    map.overlayMapTypes.setAt(1, windMap);
-    map.overlayMapTypes.setAt(2, tempMap);
-    map.overlayMapTypes.setAt(3, cloudMap);
+//    map.overlayMapTypes.setAt(0, mainMap);
+//    map.overlayMapTypes.setAt(1, windMap);
+//    map.overlayMapTypes.setAt(2, tempMap);
+//    map.overlayMapTypes.setAt(3, cloudMap);
 
     var polyOptions = {
         strokeColor: '#000000',
         strokeOpacity: 1.0,
-        strokeWeight: 3
+        strokeWeight: 3,
+        draggable: true
     }
+
     poly = new google.maps.Polyline(polyOptions);
     poly.setMap(map);
 
@@ -161,11 +165,11 @@ function setAttributes() {
         label: "Wind On/Off",
         checked: false,
         action: function () {
-            if (this.checked == true) {
-                this.checked = false;
+            if (this.checked == false) {
+                this.checked = true;
                 map.overlayMapTypes.setAt(1, windMap);
             } else {
-                this.checked = true;
+                this.checked = false;
                 map.overlayMapTypes.setAt(1, null);
             }
         }
@@ -180,11 +184,11 @@ function setAttributes() {
         label: "Clouds On/Off",
         checked: false,
         action: function () {
-            if (this.checked == true) {
-                this.checked = false;
+            if (this.checked == false) {
+                this.checked = true;
                 map.overlayMapTypes.setAt(3, cloudMap);
             } else {
-                this.checked = true;
+                this.checked = false;
                 map.overlayMapTypes.setAt(3, null);
             }
         }
@@ -200,11 +204,11 @@ function setAttributes() {
         label: "temp On/Off",
         checked: false,
         action: function () {
-            if (this.checked == true) {
-                this.checked = false;
+            if (this.checked == false) {
+                this.checked = true;
                 map.overlayMapTypes.setAt(2, tempMap);
             } else {
-                this.checked = true;
+                this.checked = false;
                 map.overlayMapTypes.setAt(2, null);
             }
         }
@@ -234,7 +238,7 @@ function setAttributes() {
 
 //put them all together to create the drop down
     var ddDivOptions = {
-        items: [check1, check2, check3, checkClouds],
+        items: [check1, check2,checkClouds, check3],
         id: "myddOptsDiv"
     }
 //alert(ddDivOptions.items[1]);
