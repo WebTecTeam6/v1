@@ -29,12 +29,22 @@ var windMap = new google.maps.ImageMapType({
     name: "Windmap",
     maxZoom: 18
 });
+
+var cloudMap = new google.maps.ImageMapType({
+    getTileUrl: function (coord, zoom) {
+        return "http://tile.openweathermap.org/map/clouds/" + zoom + "/" + coord.x + "/" + coord.y + ".png";
+    },
+    tileSize: new google.maps.Size(256, 256),
+    maxZoom: 18
+});
+
 //----------------------------------------------------------
 
 var toggleFullscreen = false;
 var poly;
 var wayPoints = new Array();
 var distance = parseFloat(0.00);
+
 
 function getDistance(path) {
 
@@ -97,15 +107,19 @@ function initialize() {
         mapTypeControlOptions: {
             mapTypeIds: mapTypeIds
         },
-        disableDefaultUI: true,
         mapTypeControl: true,
         draggableCursor: 'crosshair'
     };
 
-    map = new google.maps.Map(document.getElementById("mapCanvas"), mapOptions);
+    map = new google.maps.Map(document.getElementById('mapCanvas'),
+        mapOptions);
+
+
+
 
     map.overlayMapTypes.push(null);	// Placeholder for Sites Overlay
     map.overlayMapTypes.push(null);	// Placeholder for OSM TOP + Sites
+    map.overlayMapTypes.push(null);
     map.overlayMapTypes.push(null);
 
 //-----------------------------------------------------------openstreetmap
@@ -122,7 +136,7 @@ function initialize() {
     map.overlayMapTypes.setAt(0, mainMap);
     map.overlayMapTypes.setAt(1, windMap);
     map.overlayMapTypes.setAt(2, tempMap);
-
+    map.overlayMapTypes.setAt(3, cloudMap);
 
     var polyOptions = {
         strokeColor: '#000000',
@@ -136,6 +150,7 @@ function initialize() {
     google.maps.event.addListener(map, 'click', addLatLng);
 
 }
+
 function setAttributes() {
 
 //create the check box items
@@ -156,6 +171,27 @@ function setAttributes() {
         }
     }
     var check1 = new checkBox(checkOptions1);
+
+    //create the check box items
+    var checkOptionsCluds = {
+        gmap: map,
+        title: "Aktivieren und deaktivieren der Wolken",
+        id: "cloudCheck",
+        label: "Clouds On/Off",
+        checked: false,
+        action: function () {
+            if (this.checked == true) {
+                this.checked = false;
+                map.overlayMapTypes.setAt(3, cloudMap);
+            } else {
+                this.checked = true;
+                map.overlayMapTypes.setAt(3, null);
+            }
+        }
+    }
+    var checkClouds = new checkBox(checkOptionsCluds);
+
+
 
     var checkOptions2 = {
         gmap: map,
@@ -198,7 +234,7 @@ function setAttributes() {
 
 //put them all together to create the drop down
     var ddDivOptions = {
-        items: [check1, check2, check3],
+        items: [check1, check2, check3, checkClouds],
         id: "myddOptsDiv"
     }
 //alert(ddDivOptions.items[1]);
