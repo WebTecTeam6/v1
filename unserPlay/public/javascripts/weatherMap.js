@@ -135,7 +135,7 @@ function initialize() {
     }));
 
 //-------------------------------------------------------setMapOverlays
-//    map.overlayMapTypes.setAt(0, mainMap);
+    map.overlayMapTypes.setAt(0, mainMap);
 //    map.overlayMapTypes.setAt(1, windMap);
 //    map.overlayMapTypes.setAt(2, tempMap);
 //    map.overlayMapTypes.setAt(3, cloudMap);
